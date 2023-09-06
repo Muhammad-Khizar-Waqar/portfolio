@@ -32,7 +32,7 @@ const Hero = () => {
      <motion.img
       variants={slideIn("up", "tween", 0.5, 1.3)}
       className={css.person}
-      src='./public/person.png'
+      src='./public/developer.png'
       alt='Developer'
      />
     </motion.div>
