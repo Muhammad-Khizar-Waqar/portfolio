@@ -18,7 +18,7 @@ const App = () => {
       <AchievementsSection />
       {/* <Corporation /> */}
       <Services />
-      <Projects />
+      {/* <Projects /> */}
 
       {/* <Experience />
       <Skills />
