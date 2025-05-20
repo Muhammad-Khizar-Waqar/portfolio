@@ -12,18 +12,6 @@ const urbanist = Urbanist({
   variable: "--urbanist",
   display: "swap",
 });
-const playfair_display = Playfair_Display({
-  weight: ["400", "500", "600", "700"],
-  subsets: ["latin"],
-  variable: "--playpair",
-  display: "swap",
-});
-const dmMono = DM_Mono({
-  weight: ["300", "400", "500"],
-  subsets: ["latin"],
-  variable: "--dmMono",
-  display: "swap",
-});
 
 export const metadata = {
   title: "Muhammad Khizar Waqar",
@@ -37,11 +25,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en' data-bs-theme='dark' className='khizar'>
-      <body
-        className={`${urbanist.variable} ${playfair_display.variable} ${dmMono.variable}`}
-      >
-        {children}
-      </body>
+      <body className={`${urbanist.variable}`}>{children}</body>
     </html>
   );
 }
