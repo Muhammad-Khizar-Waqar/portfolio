@@ -1,4 +1,3 @@
-"use client";
 import { useEffect, useState } from "react";
 import AddClassBody from "../elements/AddClassBody";
 import BackToTop from "../elements/BackToTop";
@@ -7,6 +6,7 @@ import ImageHoverEffects from "../elements/ImageHoverEffects";
 import MobileMenu from "./MobileMenu";
 import Footer from "./footer/Footer";
 import Header from "./header/Header";
+import { WOW } from "wowjs";
 
 export default function Layout({ children }) {
   const [scroll, setScroll] = useState(false);
@@ -20,16 +20,14 @@ export default function Layout({ children }) {
   };
 
   // Search
-  const [isSearch, setSearch] = useState(false);
-  const handleSearch = () => setSearch(!isSearch);
+  // Removed unused isSearch and handleSearch
 
   // OffCanvas
   const [isOffCanvas, setOffCanvas] = useState(false);
   const handleOffCanvas = () => setOffCanvas(!isOffCanvas);
 
   useEffect(() => {
-    const WOW = require("wowjs");
-    window.wow = new WOW.WOW({
+    window.wow = new WOW({
       live: false,
     });
 
@@ -49,6 +47,7 @@ export default function Layout({ children }) {
       document.removeEventListener("scroll", handleScroll);
     };
   }, [scroll]);
+
   return (
     <>
       <div id='top' />
@@ -64,7 +63,11 @@ export default function Layout({ children }) {
         handleOffCanvas={handleOffCanvas}
       />
 
-      <MobileMenu />
+      {/* Only render MobileMenu if you want it as a controlled menu */}
+      <MobileMenu
+        isMobileMenu={isMobileMenu}
+        handleMobileMenu={handleMobileMenu}
+      />
 
       <main className='main'>{children}</main>
 

@@ -934,10 +934,10 @@ img {
   stroke: #be6895;
 }
 
-.Khizar .btn {
+.khizar .btn {
   --bs-btn-padding-x: 24px;
   --bs-btn-padding-y: 17px;
-  --bs-btn-font-family: var(--urbanist)
+  --bs-btn-font-family: var(--urbanist);
   --bs-btn-font-size: 14px;
   --bs-btn-font-weight: 700;
   --bs-btn-line-height: 14px;
@@ -973,7 +973,7 @@ img {
   gap: 8px;
 }
 
-.Khizar .btn-filter {
+.khizar .btn-filter {
   --bs-btn-padding-x: 17px;
   --bs-btn-padding-y: 14px;
   --bs-btn-font-size: 16px;
@@ -993,18 +993,18 @@ img {
   border-radius: 12px !important;
   border: 0 !important;
 }
-.Khizar .btn-filter.active {
+.khizar .btn-filter.active {
   color: var(--bs-btn-active-color);
   background: var(--bs-btn-active-bg);
   border-color: var(--bs-btn-active-border-color);
 }
-.Khizar .btn-filter:hover {
+.khizar .btn-filter:hover {
   color: var(--bs-btn-active-color);
   background: var(--bs-btn-active-bg);
   border-color: var(--bs-btn-active-border-color);
 }
 
-.Khizar .btn-gradient {
+.khizar .btn-gradient {
   --bs-btn-color: #ffffff;
   --bs-btn-bg: linear-gradient(90deg, #6d4df2 0%, #8c71ff 100%);;
   --bs-btn-border-color: none;
@@ -1021,7 +1021,7 @@ img {
   --bs-btn-disabled-border-color: #6e4ef2;
 }
 
-.Khizar .btn-primary {
+.khizar .btn-primary {
   --bs-btn-color: #ffffff;
   --bs-btn-bg: #6e4ef2;
   --bs-btn-border-color: none;
@@ -1072,7 +1072,7 @@ img {
   --bs-btn-disabled-border-color: #b2a4ab;
 }
 
-.Khizar .btn-outline-secondary {
+.khizar .btn-outline-secondary {
   
   --bs-btn-bg: #ffffff;
   --bs-btn-border-color: #6e4ef2;
@@ -1103,7 +1103,7 @@ img {
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 
-.Khizar .avatar {
+.khizar .avatar {
   position: relative;
   display: inline-block;
   width: 3rem;
@@ -1869,7 +1869,7 @@ textarea {
   color: var(--tc-neutral-900) !important;
 }
 
-.Khizar .text-white {
+.khizar .text-white {
   color: var(--tc-neutral-1000) !important;
 }
 
@@ -1877,11 +1877,11 @@ textarea {
   color: #ffffff !important;
 }
 
-.Khizar .text-dark {
+.khizar .text-dark {
   color: var(--tc-neutral-0) !important;
 }
 
-.Khizar .text-primary {
+.khizar .text-primary {
   color: var(--tc-theme-primary-1) !important;
 }
 
@@ -1994,11 +1994,11 @@ textarea {
   background-color: var(--tc-system-info) !important;
 }
 
-.Khizar .bg-white {
+.khizar .bg-white {
   background-color: var(--tc-neutral-1000) !important;
 }
 
-.Khizar .bg-white-keep {
+.khizar .bg-white-keep {
   background-color: #ffffff !important;
 }
 

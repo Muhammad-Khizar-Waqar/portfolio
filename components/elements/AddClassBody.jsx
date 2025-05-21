@@ -1,24 +1,23 @@
-'use client'
-import { usePathname } from 'next/navigation' // Corrected import path
-import { useEffect } from 'react'
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 export default function AddClassBody() {
-	const pathname = usePathname()
+    const location = useLocation();
+    const pathname = location.pathname;
 
-	useEffect(() => {
-		const bodyElement = document.querySelector('body')
+    useEffect(() => {
+        const bodyElement = document.querySelector('body');
 
-		if (bodyElement) {
-			bodyElement.classList.remove('home-page-3', 'home-page-2')
-			if (pathname === '/index-2') {
-				bodyElement.classList.add('home-page-2')
-			}
-			if (pathname === '/index-3') {
-				bodyElement.classList.add('home-page-3')
-			}
+        if (bodyElement) {
+            bodyElement.classList.remove('home-page-3', 'home-page-2');
+            if (pathname === '/index-2') {
+                bodyElement.classList.add('home-page-2');
+            }
+            if (pathname === '/index-3') {
+                bodyElement.classList.add('home-page-3');
+            }
+        }
+    }, [pathname]);
 
-		}
-	}, [pathname])
-
-	return null
+    return null;
 }

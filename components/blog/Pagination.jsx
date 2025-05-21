@@ -12,9 +12,9 @@ export default function Pagination({
         {getPaginationGroup.length <= 0 ? null : (
           <li onClick={prev} className='next_link page-item'>
             {currentPage === 1 ? null : (
-              <a>
+              <button className="page-link" type="button">
                 <i className='fa fa-arrow-left' />
-              </a>
+              </button>
             )}
           </li>
         )}
@@ -28,7 +28,7 @@ export default function Pagination({
                 currentPage === item ? "page-item active" : "page-item"
               }
             >
-              <a className='page-link'>{item}</a>
+              <button className='page-link' type="button">{item}</button>
             </li>
           );
         })}
@@ -36,9 +36,9 @@ export default function Pagination({
         {getPaginationGroup.length <= 0 ? null : (
           <li onClick={next} className='next_link page-item'>
             {currentPage >= pages ? null : (
-              <a>
+              <button className="page-link" type="button">
                 <i className='fa fa-arrow-right' />
-              </a>
+              </button>
             )}
           </li>
         )}

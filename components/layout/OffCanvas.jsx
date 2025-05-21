@@ -1,7 +1,5 @@
-import Link from 'next/link'
-
 export default function OffCanvas({ isOffCanvas, handleOffCanvas }) {
-	return (
+  return (
     <>
       {/* offCanvas-menu */}
       <div className={`offCanvas__info ${isOffCanvas ? "active" : ""}`}>
@@ -35,25 +33,29 @@ export default function OffCanvas({ isOffCanvas, handleOffCanvas }) {
               <p className='mb-0'>@khizar01</p>
             </div>
             {/* <div className="mb-3">
-								<span className="text-400 fs-5">Address</span>
-								<p className="mb-0">0811 Erdman Prairie Road, Joaville, California 90210</p>
-							</div> */}
+                                <span className="text-400 fs-5">Address</span>
+                                <p className="mb-0">0811 Erdman Prairie Road, Joaville, California 90210</p>
+                            </div> */}
           </div>
           <div className='contact-list'>
             <p className='text-400 fs-5 mb-2'>Social</p>
             <div className='d-md-flex d-none gap-3'>
-              {/* <Link href="/http://facebook.com">
-									<i className="ri-facebook-circle-fill fs-18" />
-								</Link> */}
-              {/* <Link href="/http://twitter.com">
-									<i className="ri-twitter-x-fill fs-18" />
-								</Link> */}
-              <Link href='https://www.linkedin.com/in/muhammad-khizar-waqar'>
+              {/* <a href="http://facebook.com" target="_blank" rel="noopener noreferrer">
+                                    <i className="ri-facebook-circle-fill fs-18" />
+                                </a> */}
+              {/* <a href="http://twitter.com" target="_blank" rel="noopener noreferrer">
+                                    <i className="ri-twitter-x-fill fs-18" />
+                                </a> */}
+              <a
+                href='https://www.linkedin.com/in/muhammad-khizar-waqar'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
                 <i className='ri-linkedin-fill fs-18' />
-              </Link>
-              {/* <Link href="/http://github.com">
-									<i className="ri-github-fill fs-18" />
-								</Link> */}
+              </a>
+              {/* <a href="http://github.com" target="_blank" rel="noopener noreferrer">
+                                    <i className="ri-github-fill fs-18" />
+                                </a> */}
             </div>
           </div>
         </div>
