@@ -1,6 +1,5 @@
-"use client";
-import Link from "next/link";
-import { useState } from "react";
+
+import { Link } from "react-router-dom";
 import PerfectScrollbar from "react-perfect-scrollbar";
 
 export default function MobileMenu({ isMobileMenu, handleMobileMenu }) {
@@ -15,7 +14,7 @@ export default function MobileMenu({ isMobileMenu, handleMobileMenu }) {
           <div className='mobile-header-logo'>
             <Link
               className='d-flex main-logo align-items-center d-inline-flex'
-              href='/'
+              to='/'
             >
               <img src='/assets/imgs/footer-1/logo.svg' alt='infinia' />
               <span className='fs-4 ms-2 text-dark'>khizar.dev</span>
@@ -37,32 +36,32 @@ export default function MobileMenu({ isMobileMenu, handleMobileMenu }) {
                 <nav>
                   <ul className='mobile-menu font-heading ps-0'>
                     <li className='nav-item'>
-                      <Link className='nav-link active' href='/'>
+                      <Link className='nav-link active' to='/'>
                         Home
                       </Link>
                     </li>
                     <li className='nav-item'>
-                      <Link className='nav-link' href='/services'>
+                      <Link className='nav-link' to='/services'>
                         Services
                       </Link>
                     </li>
                     <li className='nav-item'>
-                      <Link className='nav-link' href='/work'>
+                      <Link className='nav-link' to='/work'>
                         Portfolio
                       </Link>
                     </li>
                     <li className='nav-item'>
-                      <Link className='nav-link' href='/pricing'>
+                      <Link className='nav-link' to='/pricing'>
                         Pricing
                       </Link>
                     </li>
                     <li className='nav-item'>
-                      <Link className='nav-link' href='/blog-list'>
+                      <Link className='nav-link' to='/blog-list'>
                         Blog
                       </Link>
                     </li>
                     <li className='nav-item'>
-                      <Link className='nav-link' href='/#contact'>
+                      <Link className='nav-link' to='/#contact'>
                         Contact
                       </Link>
                     </li>

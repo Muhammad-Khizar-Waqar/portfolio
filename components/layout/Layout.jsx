@@ -1,4 +1,3 @@
-"use client";
 import { useEffect, useState } from "react";
 import AddClassBody from "../elements/AddClassBody";
 import BackToTop from "../elements/BackToTop";
@@ -19,22 +18,20 @@ export default function Layout({ children }) {
       : document.body.classList.remove("mobile-menu-active");
   };
 
-  // Search
-  const [isSearch, setSearch] = useState(false);
-  const handleSearch = () => setSearch(!isSearch);
-
   // OffCanvas
   const [isOffCanvas, setOffCanvas] = useState(false);
   const handleOffCanvas = () => setOffCanvas(!isOffCanvas);
 
   useEffect(() => {
-    const WOW = require("wowjs");
-    window.wow = new WOW.WOW({
-      live: false,
+    let wowInstance;
+    import("wowjs").then((mod) => {
+      const WOW = mod.WOW;
+      window.wow = new WOW({
+        live: false,
+      });
+      window.wow.init();
+      wowInstance = window.wow;
     });
-
-    // Initialize WOW.js
-    window.wow.init();
 
     const handleScroll = () => {
       const scrollCheck = window.scrollY > 100;
@@ -47,8 +44,13 @@ export default function Layout({ children }) {
 
     return () => {
       document.removeEventListener("scroll", handleScroll);
+      // Optionally, cleanup wowjs if needed
+      if (wowInstance && wowInstance.sync) {
+        wowInstance.sync();
+      }
     };
   }, [scroll]);
+
   return (
     <>
       <div id='top' />
@@ -64,7 +66,11 @@ export default function Layout({ children }) {
         handleOffCanvas={handleOffCanvas}
       />
 
-      <MobileMenu />
+      {/* Only render MobileMenu if you want it as a controlled menu */}
+      <MobileMenu
+        isMobileMenu={isMobileMenu}
+        handleMobileMenu={handleMobileMenu}
+      />
 
       <main className='main'>{children}</main>
 

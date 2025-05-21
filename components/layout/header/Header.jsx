@@ -1,10 +1,9 @@
-import ThemeSwitch from "../../../components/elements/ThemeSwitch";
-import Link from "next/link";
+import ThemeSwitch from "../../elements/ThemeSwitch"
 import OffCanvas from "../OffCanvas";
 import MobileMenu from "../MobileMenu";
+import { Link } from "react-router-dom";
 
 export default function Header({
-  scroll,
   isMobileMenu,
   handleMobileMenu,
   isOffCanvas,
@@ -21,13 +20,14 @@ export default function Header({
                 data-bs-target='.offCanvas__info'
                 aria-controls='offCanvas__info'
                 onClick={handleOffCanvas}
+                href='#'
               >
                 <i className='ri-menu-2-line' />
               </a>
               <div className='container py-3 px-4'>
                 <Link
                   className='navbar-brand d-flex main-logo align-items-center'
-                  href='/'
+                  to='/'
                 >
                   <img
                     src='assets/imgs/home-page-2/template/favicon.svg'
@@ -42,56 +42,55 @@ export default function Header({
                   >
                     <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
                       <li className='nav-item'>
-                        <Link className='nav-link active' href='#about'>
+                        <a className='nav-link active' href='#about'>
                           About me
-                        </Link>
+                        </a>
                       </li>
-
                       <li className='nav-item'>
-                        <Link className='nav-link' href='#services'>
+                        <a className='nav-link' href='#services'>
                           Services
-                        </Link>
+                        </a>
                       </li>
-
                       <li className='nav-item'>
-                        <Link className='nav-link' href='#portfolio'>
+                        <a className='nav-link' href='#portfolio'>
                           Portfolio
-                        </Link>
+                        </a>
                       </li>
-
                       <li className='nav-item'>
-                        <Link className='nav-link' href='#projects'>
+                        <a className='nav-link' href='#projects'>
                           Projects
-                        </Link>
+                        </a>
                       </li>
-
                       <li className='nav-item'>
-                        <Link className='nav-link' href='#skills'>
+                        <a className='nav-link' href='#skills'>
                           Skills
-                        </Link>
+                        </a>
                       </li>
-
                       <li className='nav-item'>
-                        <Link className='nav-link' href='#blog'>
+                        <a className='nav-link' href='#blog'>
                           Blog
-                        </Link>
+                        </a>
                       </li>
                       <li className='nav-item'>
-                        <Link className='nav-link' href='#contact'>
+                        <a className='nav-link' href='#contact'>
                           Contact
-                        </Link>
+                        </a>
                       </li>
                     </ul>
                   </div>
                 </div>
                 <div className='navbar-social d-flex align-items-center pe-5 pe-lg-0 me-5 me-lg-0'>
                   <div className='d-md-flex d-none gap-3'>
-                    <Link href='https://www.linkedin.com/in/muhammad-khizar-waqar'>
+                    <a
+                      href='https://www.linkedin.com/in/muhammad-khizar-waqar'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
                       <i className='ri-linkedin-fill fs-18' />
-                    </Link>
-                    {/* <Link href='/http://github.com'>
+                    </a>
+                    {/* <a href='http://github.com' target='_blank' rel='noopener noreferrer'>
                       <i className='ri-github-fill fs-18' />
-                    </Link> */}
+                    </a> */}
                   </div>
                   <div
                     className='burger-icon burger-icon-white border rounded-3'

@@ -1,4 +1,3 @@
-"use client";
 import React, { useEffect, useState } from "react";
 import data from "../../util/blog.json";
 import BlogCard1 from "./BlogCard1";
@@ -6,11 +5,8 @@ import BlogCard2 from "./BlogCard";
 import BlogCard3 from "./BlogCard3";
 import Pagination from "./Pagination";
 
-// Removed TypeScript interface
-
 export default function BlogPost({ style, showItem, showPagination }) {
   const [currentPage, setCurrentPage] = useState(1);
-  // const showLimit = showItem
   const paginationItem = 4;
 
   const [pagination, setPagination] = useState([]);
@@ -50,6 +46,7 @@ export default function BlogPost({ style, showItem, showPagination }) {
   const handleActive = (item) => {
     setCurrentPage(item);
   };
+
   return (
     <>
       {getPaginatedProducts.length === 0 && <h3>No Products Found </h3>}
