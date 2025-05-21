@@ -6,7 +6,6 @@ import ImageHoverEffects from "../elements/ImageHoverEffects";
 import MobileMenu from "./MobileMenu";
 import Footer from "./footer/Footer";
 import Header from "./header/Header";
-import { WOW } from "wowjs";
 
 export default function Layout({ children }) {
   const [scroll, setScroll] = useState(false);
@@ -19,20 +18,20 @@ export default function Layout({ children }) {
       : document.body.classList.remove("mobile-menu-active");
   };
 
-  // Search
-  // Removed unused isSearch and handleSearch
-
   // OffCanvas
   const [isOffCanvas, setOffCanvas] = useState(false);
   const handleOffCanvas = () => setOffCanvas(!isOffCanvas);
 
   useEffect(() => {
-    window.wow = new WOW({
-      live: false,
+    let wowInstance;
+    import("wowjs").then((mod) => {
+      const WOW = mod.WOW;
+      window.wow = new WOW({
+        live: false,
+      });
+      window.wow.init();
+      wowInstance = window.wow;
     });
-
-    // Initialize WOW.js
-    window.wow.init();
 
     const handleScroll = () => {
       const scrollCheck = window.scrollY > 100;
@@ -45,6 +44,10 @@ export default function Layout({ children }) {
 
     return () => {
       document.removeEventListener("scroll", handleScroll);
+      // Optionally, cleanup wowjs if needed
+      if (wowInstance && wowInstance.sync) {
+        wowInstance.sync();
+      }
     };
   }, [scroll]);
 
