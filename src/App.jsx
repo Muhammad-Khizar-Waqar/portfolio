@@ -7,16 +7,12 @@ import Skills from "../components/sections/Skills";
 import Static from "../components/sections/Static";
 import Layout from "../components/layout/Layout";
 import Experience from "../components/sections/Experience";
-import "/public/assets/css/main.css";
-import "/public/assets/css/vendors/aos.css";
 import "/public/assets/css/vendors/bootstrap.min.css";
-import "/public/assets/css/vendors/bootstrap.rtl.min.css";
+import "/public/assets/css/vendors/swiper-bundle.min.css";
 import "/public/assets/css/vendors/carouselTicker.css";
 import "/public/assets/css/vendors/magnific-popup.css";
-import "/public/assets/css/vendors/odometer.css";
-import "/public/assets/css/vendors/swiper-bundle.min.css";
 import "/public/assets/fonts/remixicon/remixicon.css";
-
+import "/public/assets/css/main.css";
 
 
 export default function App() {
@@ -35,5 +31,3 @@ export default function App() {
     </>
   );
 }
-
-
