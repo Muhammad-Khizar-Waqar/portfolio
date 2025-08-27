@@ -1,6 +1,21 @@
 import Marquee from "react-fast-marquee";
 
 export default function Hero() {
+  // Handle download click with error feedback
+  const handleDownloadClick = async (e) => {
+    const pdfPath = "/assets/MuhammadKhizarWaqar.pdf";
+    try {
+      const response = await fetch(pdfPath, { method: "HEAD" });
+      if (!response.ok) {
+        e.preventDefault();
+        console.log("Error: CV file not found. Please contact support.");
+      }
+    } catch (error) {
+      e.preventDefault();
+      console.log("Error accessing the CV file. Please try again later.");
+    }
+  };
+
   return (
     <>
       <section
@@ -14,12 +29,12 @@ export default function Hero() {
                 <div className="col-lg-5 ps-lg-5 text-lg-start text-center">
                   <div className="position-relative mb-lg-0 mb-5">
                     <img
-                      src="assets/imgs/home-page-2/hero-1/people.png"
+                      src="/assets/imgs/home-page-2/hero-1/people.png"
                       alt="khizar"
                     />
                     <div className="position-absolute end-0 top-100 translate-middle-y icon-decorate">
                       <img
-                        src="assets/imgs/home-page-2/hero-1/icon.svg"
+                        src="/assets/imgs/home-page-2/hero-1/icon.svg"
                         alt="khizar"
                       />
                     </div>
@@ -41,9 +56,9 @@ export default function Hero() {
                       <span className="text-linear-4">
                         {"{"}Full Stack{"}"}
                       </span>{" "}
-                      Web developer<span className="flicker">_</span>
+                      Web Developer<span className="flicker">_</span>
                     </h1>
-                    <p className="mb-6 text-secondary-2">
+                    <p className="mb SIX text-secondary-2">
                       &lt;p&gt;
                       <span className="text-dark">
                         With expertise in cutting-edge technologies such as
@@ -61,16 +76,15 @@ export default function Hero() {
                     </p>
                     <div className="row">
                       <div className="col-7">
-                        {/* Carausel Scroll */}
                         <Marquee className="carouselTicker carouselTicker-left position-relative z-1 mt-lg-0 mt-8">
-                          <ul className="carouselTicker__list ">
+                          <ul className="carouselTicker__list">
                             <li className="carouselTicker__item">
                               <a
                                 href="#"
                                 className="brand-logo icon_60 icon-shape rounded-3"
                               >
                                 <img
-                                  src="assets/imgs/home-page-2/hero-1/icon-1.svg"
+                                  src="/assets/imgs/home-page-2/hero-1/icon-1.svg"
                                   alt="brand"
                                 />
                               </a>
@@ -81,7 +95,7 @@ export default function Hero() {
                                 className="brand-logo icon_60 icon-shape rounded-3"
                               >
                                 <img
-                                  src="assets/imgs/home-page-2/hero-1/icon-2.svg"
+                                  src="/assets/imgs/home-page-2/hero-1/icon-2.svg"
                                   alt="brand"
                                 />
                               </a>
@@ -92,7 +106,7 @@ export default function Hero() {
                                 className="brand-logo icon_60 icon-shape rounded-3"
                               >
                                 <img
-                                  src="assets/imgs/home-page-2/hero-1/icon-3.svg"
+                                  src="/assets/imgs/home-page-2/hero-1/icon-3.svg"
                                   alt="brand"
                                 />
                               </a>
@@ -103,7 +117,7 @@ export default function Hero() {
                                 className="brand-logo icon_60 icon-shape rounded-3"
                               >
                                 <img
-                                  src="assets/imgs/home-page-2/hero-1/icon-4.svg"
+                                  src="/assets/imgs/home-page-2/hero-1/icon-4.svg"
                                   alt="brand"
                                 />
                               </a>
@@ -114,7 +128,7 @@ export default function Hero() {
                                 className="brand-logo icon_60 icon-shape rounded-3"
                               >
                                 <img
-                                  src="assets/imgs/home-page-2/hero-1/icon-5.svg"
+                                  src="/assets/imgs/home-page-2/hero-1/icon-5.svg"
                                   alt="brand"
                                 />
                               </a>
@@ -127,10 +141,12 @@ export default function Hero() {
                       </div>
                     </div>
                     <a
-                      href="assets/resume.pdf"
+                      href="/assets/MuhammadKhizarWaqar.pdf"
                       className="btn me-2 text-300 ps-0 mt-4"
                       target="_blank"
                       rel="noopener noreferrer"
+                      download
+                      onClick={handleDownloadClick}
                     >
                       <i className="ri-download-line text-primary-2" />[
                       Download my CV ]
@@ -144,12 +160,12 @@ export default function Hero() {
         <div className="background position-absolute top-0 start-0 w-100 h-100">
           <img
             className="bg-w"
-            src="assets/imgs/home-page-2/hero-1/bg.png"
+            src="/assets/imgs/home-page-2/hero-1/bg.png"
             alt="khizar"
           />
           <img
             className="bg-d"
-            src="assets/imgs/home-page-2/hero-1/bg-dark.png"
+            src="/assets/imgs/home-page-2/hero-1/bg-dark.png"
             alt="khizar"
           />
         </div>
