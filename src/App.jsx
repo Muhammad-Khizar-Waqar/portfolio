@@ -14,7 +14,6 @@ import "/public/assets/css/vendors/magnific-popup.css";
 import "/public/assets/fonts/remixicon/remixicon.css";
 import "/public/assets/css/main.css";
 
-
 export default function App() {
   return (
     <>
@@ -22,10 +21,10 @@ export default function App() {
         <Hero />
         <Static />
         <Service />
-        <Experience />
-        <Projects />
+        {/* <Experience /> */}
+        {/* <Projects /> */}
         <Skills />
-        <Blog />
+        {/* <Blog /> */}
         <Contact />
       </Layout>
     </>
