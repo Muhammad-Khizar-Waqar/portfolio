@@ -26,7 +26,7 @@ export default function OffCanvas({ isOffCanvas, handleOffCanvas }) {
             </div>
             <div className='mb-3'>
               <span className='text-400 fs-5'>Email</span>
-              <p className='mb-0'>muhammad.khizar.waqar@gmail.com</p>
+              <p className='mb-0 break-all'>muhammad.khizar.waqar@gmail.com</p>
             </div>
             <div className='mb-3'>
               <span className='text-400 fs-5'>Telegram</span>

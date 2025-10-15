@@ -15,7 +15,7 @@ export default function Experience() {
                                     <span className="text-linear-4 d-flex align-items-center"> Expericence </span>
                                 </div>
                                 <h3>
-                                    +12
+                                    +5
                                     <span className="text-300">years of </span>
                                     passion
                                     <span className="text-300">
@@ -30,8 +30,8 @@ export default function Experience() {
                                                 <div className="d-flex align-items-center gap-2">
                                                     <img src="assets/imgs/home-page-2/experience/google.svg" alt="khizar" />
                                                     <div className="d-flex flex-column ms-2">
-                                                        <h5 className="mb-1">Google</h5>
-                                                        <span className="text-300">2018 - Present</span>
+                                                        <h5 className="mb-1">Peospiral</h5>
+                                                        <span className="text-300">2025 - Present</span>
                                                     </div>
                                                 </div>
                                             </Link>
@@ -39,8 +39,8 @@ export default function Experience() {
                                                 <div className="d-flex align-items-center gap-2">
                                                     <img src="assets/imgs/home-page-2/experience/twitter.svg" alt="khizar" />
                                                     <div className="d-flex flex-column ms-2">
-                                                        <h5 className="mb-1">Twitter (X)</h5>
-                                                        <span className="text-300">2012 - 2015</span>
+                                                        <h5 className="mb-1">Tech Brainz (X)</h5>
+                                                        <span className="text-300">2022 - 2024</span>
                                                     </div>
                                                 </div>
                                             </Link>
@@ -48,12 +48,12 @@ export default function Experience() {
                                                 <div className="d-flex align-items-center gap-2">
                                                     <img src="assets/imgs/home-page-2/experience/amazon.svg" alt="khizar" />
                                                     <div className="d-flex flex-column ms-2">
-                                                        <h5 className="mb-1">Amazon</h5>
+                                                        <h5 className="mb-1">The Web Hunters</h5>
                                                         <span className="text-300">2018 - Present</span>
                                                     </div>
                                                 </div>
                                             </Link>
-                                            <Link to="#" className="technology border border-1 rounded-3 p-3">
+                                            {/* <Link to="#" className="technology border border-1 rounded-3 p-3">
                                                 <div className="d-flex align-items-center gap-2">
                                                     <img src="assets/imgs/home-page-2/experience/payPal.svg" alt="khizar" />
                                                     <div className="d-flex flex-column ms-2">
@@ -61,7 +61,7 @@ export default function Experience() {
                                                         <span className="text-300">2010 - 2012</span>
                                                     </div>
                                                 </div>
-                                            </Link>
+                                            </Link> */}
                                         </div>
                                     </div>
                                     <div className="col-lg-8 ps-lg-5 mt-5 mt-lg-0">

@@ -61,7 +61,7 @@ export default function Contact() {
 								</div>
 								<div className="ps-3 h-100">
 									<span className="text-400 fs-6">Email</span>
-									<h6 className="mb-0">muhammad.khizar.waqar@gmail.com</h6>
+									<h6 className="mb-0 break-all">muhammad.khizar.waqar@gmail.com</h6>
 								</div>
 								<a href="mailto:someone@example.com" className="position-absolute top-0 start-0 w-100 h-100" />
 							</div>
