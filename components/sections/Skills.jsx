@@ -88,6 +88,12 @@ export default function Skills() {
                                                                 </Link>
                                                                 <span className="tool-tip">Tailwind</span>
                                                             </li>
+                                                            <li className="carouselTicker__item mt-6">
+                                                                <Link to="#" className="brand-logo icon_80 icon-shape rounded-3">
+                                                                    <img src="assets/imgs/home-page-2/hero-1/icon-4.svg" alt="brand" />
+                                                                </Link>
+                                                                <span className="tool-tip">AI/ML</span>
+                                                            </li>
                                                         </ul>
                                                     </Marquee>
                                                 </div>
@@ -125,7 +131,7 @@ export default function Skills() {
                                                             <li className="mb-3">
                                                                 <div className="d-flex flex-column flex-md-row gap-2">
                                                                     <p className="text-dark text-nowrap mb-0">Others:</p>
-                                                                    <span className="text-300">RESTful APIs, GraphQL, Agile Methodologies</span>
+                                                                    <span className="text-300">AI & Machine Learning, LLMs, RESTful APIs, Agile</span>
                                                                 </div>
                                                             </li>
                                                         </ul>

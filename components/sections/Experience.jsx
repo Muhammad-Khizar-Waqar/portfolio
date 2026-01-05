@@ -72,10 +72,11 @@ export default function Experience() {
                                             <li className="text-dark mb-3">Collaborated with cross-functional teams to integrate new features seamlessly.</li>
                                         </ul>
                                         <div className="d-flex flex-wrap align-items-center gap-3 mt-7">
+                                            <Link to="#" className="text-300 border border-1 px-3 py-1">AI/ML</Link>
+                                            <Link to="#" className="text-300 border border-1 px-3 py-1">LLMs</Link>
                                             <Link to="#" className="text-300 border border-1 px-3 py-1">Python</Link>
                                             <Link to="#" className="text-300 border border-1 px-3 py-1">TensorFlow</Link>
                                             <Link to="#" className="text-300 border border-1 px-3 py-1">Angular</Link>
-                                            <Link to="#" className="text-300 border border-1 px-3 py-1">Kubernetes</Link>
                                             <Link to="#" className="text-300 border border-1 px-3 py-1">GCP</Link>
                                         </div>
                                     </div>

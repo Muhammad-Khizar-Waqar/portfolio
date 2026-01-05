@@ -54,7 +54,7 @@ export default function Hero() {
                     <h1 className="fs-50 my-3">
                       Senior{" "}
                       <span className="text-linear-4">
-                        {"{"}Full Stack{"}"}
+                        {"{"}AI & Full Stack{"}"}
                       </span>{" "}
                       Web Developer<span className="flicker">_</span>
                     </h1>
