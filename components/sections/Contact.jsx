@@ -1,12 +1,12 @@
 import { useState } from "react";
 
 /*
-  Set this to a form endpoint (e.g. a Formspree URL like
-  "https://formspree.io/f/xxxxxxxx") to receive submissions by email.
-  While it is empty the form falls back to opening the visitor's mail
-  client with everything pre-filled, so it still works out of the box.
+  Submissions go to Netlify Forms. The form is registered by the hidden copy in
+  index.html — keep the name and the field list below in sync with it. Read the
+  submissions under Site configuration > Forms in the Netlify dashboard, where
+  email notifications can also be turned on.
 */
-const FORM_ENDPOINT = "";
+const FORM_NAME = "contact";
 
 const EMAIL_ADDRESS = "muhammad.khizar.waqar@gmail.com";
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -66,6 +66,8 @@ export default function Contact() {
 	const [values, setValues] = useState(EMPTY_FORM);
 	const [errors, setErrors] = useState({});
 	const [status, setStatus] = useState("idle"); // idle | sending | success | error
+	// Netlify's honeypot: real people never see this, bots fill it in.
+	const [botField, setBotField] = useState("");
 
 	const handleChange = (event) => {
 		const { name, value } = event.target;
@@ -92,6 +94,20 @@ export default function Contact() {
 		)}&body=${encodeURIComponent(body)}`;
 	};
 
+	const submitToNetlify = async () => {
+		const body = new URLSearchParams({
+			"form-name": FORM_NAME,
+			"bot-field": botField,
+			...values,
+		});
+		const response = await fetch("/", {
+			method: "POST",
+			headers: { "Content-Type": "application/x-www-form-urlencoded" },
+			body: body.toString(),
+		});
+		if (!response.ok) throw new Error(`Netlify returned ${response.status}`);
+	};
+
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 
@@ -102,23 +118,18 @@ export default function Contact() {
 			return;
 		}
 
-		if (!FORM_ENDPOINT) {
-			sendByMailClient();
-			setStatus("success");
-			setValues(EMPTY_FORM);
-			return;
-		}
-
 		setStatus("sending");
 		try {
-			const response = await fetch(FORM_ENDPOINT, {
-				method: "POST",
-				headers: { "Content-Type": "application/json", Accept: "application/json" },
-				body: JSON.stringify(values),
-			});
-			if (!response.ok) throw new Error(`Request failed: ${response.status}`);
+			if (import.meta.env.DEV) {
+				// Netlify's form handler only exists on the deployed site, so in
+				// local dev fall back to the visitor's mail client.
+				sendByMailClient();
+			} else {
+				await submitToNetlify();
+			}
 			setStatus("success");
 			setValues(EMPTY_FORM);
+			setBotField("");
 		} catch {
 			setStatus("error");
 		}
@@ -137,7 +148,28 @@ export default function Contact() {
 							<div className="position-relative">
 								<div className="position-relative z-2">
 									<h3 className="text-primary-2 mb-3">Let’s connect</h3>
-									<form onSubmit={handleSubmit} noValidate>
+									<form
+										name={FORM_NAME}
+										method="POST"
+										data-netlify="true"
+										netlify-honeypot="bot-field"
+										onSubmit={handleSubmit}
+										noValidate
+									>
+										<input type="hidden" name="form-name" value={FORM_NAME} />
+										{/* Honeypot — hidden from people, irresistible to bots. */}
+										<p className="d-none">
+											<label>
+												Don’t fill this out if you’re human:
+												<input
+													name="bot-field"
+													value={botField}
+													onChange={(event) => setBotField(event.target.value)}
+													tabIndex={-1}
+													autoComplete="off"
+												/>
+											</label>
+										</p>
 										<div className="row g-3">
 											<div className="col-md-6">
 												<label className="visually-hidden" htmlFor="name">Your name</label>
