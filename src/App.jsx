@@ -13,6 +13,7 @@ import "/public/assets/css/vendors/carouselTicker.css";
 import "/public/assets/css/vendors/magnific-popup.css";
 import "/public/assets/fonts/remixicon/remixicon.css";
 import "/public/assets/css/main.css";
+import "/public/assets/css/custom.css";
 
 export default function App() {
   return (
@@ -21,8 +22,8 @@ export default function App() {
         <Hero />
         <Static />
         <Service />
-        {/* <Experience /> */}
-        {/* <Projects /> */}
+        <Experience /> 
+       <Projects />
         <Skills />
         {/* <Blog /> */}
         <Contact />

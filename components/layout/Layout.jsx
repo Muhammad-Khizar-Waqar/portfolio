@@ -3,7 +3,6 @@ import AddClassBody from "../elements/AddClassBody";
 import BackToTop from "../elements/BackToTop";
 import DataBg from "../elements/DataBg";
 import ImageHoverEffects from "../elements/ImageHoverEffects";
-import MobileMenu from "./MobileMenu";
 import Footer from "./footer/Footer";
 import Header from "./header/Header";
 
@@ -66,11 +65,7 @@ export default function Layout({ children }) {
         handleOffCanvas={handleOffCanvas}
       />
 
-      {/* Only render MobileMenu if you want it as a controlled menu */}
-      <MobileMenu
-        isMobileMenu={isMobileMenu}
-        handleMobileMenu={handleMobileMenu}
-      />
+      {/* MobileMenu is rendered inside Header, which already receives these props. */}
 
       <main className='main'>{children}</main>
 

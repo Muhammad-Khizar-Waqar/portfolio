@@ -1,11 +1,51 @@
 import { Link } from "react-router-dom";
 import Marquee from 'react-fast-marquee';
 
+const ICON_BASE = "assets/imgs/home-page-2/hero-1";
+
+// Top ticker scrolls right, bottom ticker scrolls left.
+const skillLogosTop = [
+    { name: "Node.js", icon: "icon-4.svg" },
+    { name: "Next.js", icon: "icon-1.svg" },
+    { name: "React", icon: "icon-6.svg" },
+];
+
+const skillLogosBottom = [
+    { name: "Vue.js", icon: "icon-7.svg" },
+    { name: "MongoDB", icon: "icon-3.svg" },
+    { name: "Tailwind", icon: "icon-5.svg" },
+];
+
+const skillGroups = [
+    { label: "AI & Automation:", items: "AI Agents, LLM & Chatbot Integration, Document Q&A, Workflow Automation, Prompt Engineering" },
+    { label: "Front-End:", items: "JavaScript (ES6+), React, Next.js, Vue.js, Tailwind, Bootstrap, Material UI" },
+    { label: "Back-End:", items: "Node.js, Express, RESTful APIs" },
+    { label: "Databases:", items: "MongoDB, PostgreSQL" },
+    { label: "Tools:", items: "Redux, Pinia, Git, Docker, Stripe" },
+];
+
+function SkillTicker({ logos, direction }) {
+    return (
+        <Marquee className={`carouselTicker carouselTicker-${direction} position-relative z-1`} direction={direction === "right" ? "right" : "left"}>
+            <ul className="carouselTicker__list m-0">
+                {logos.map((logo) => (
+                    <li key={logo.name} className="carouselTicker__item mt-6">
+                        <Link to="#" className="brand-logo icon_80 icon-shape rounded-3">
+                            <img src={`${ICON_BASE}/${logo.icon}`} alt={logo.name} />
+                        </Link>
+                        <span className="tool-tip">{logo.name}</span>
+                    </li>
+                ))}
+            </ul>
+        </Marquee>
+    );
+}
+
 export default function Skills() {
     return (
         <>
 
-            <section id="skills" className="section-skills-2 pt-5">
+            <section id="skills" className="section-skills-2">
                 <div className="container">
                     <div className="rounded-3 bg-3 border border-1 position-relative overflow-hidden">
                         <div className="position-relative z-1 py-60">
@@ -15,7 +55,7 @@ export default function Skills() {
                                         <svg className="text-primary-2 me-2" xmlns="http://www.w3.org/2000/svg" width={5} height={6} viewBox="0 0 5 6" fill="none">
                                             <circle cx="2.5" cy={3} r="2.5" fill="#A8FF53" />
                                         </svg>
-                                        <span className="text-linear-4 d-flex align-items-center"> Projects </span>
+                                        <span className="text-linear-4 d-flex align-items-center"> Skills </span>
                                     </div>
                                     <h3>My Skills</h3>
                                 </div>
@@ -25,71 +65,11 @@ export default function Skills() {
                                             <div className="row">
                                                 <div className="col-lg-10 col-md-9 mx-auto overflow-hidden">
                                                     {/* Carausel Scroll */}
-                                                    <Marquee className="carouselTicker carouselTicker-right position-relative z-1" direction="right">
-                                                        <ul className="carouselTicker__list m-0">
-                                                            <li className="carouselTicker__item mt-6">
-                                                                <Link to="#" className="brand-logo icon_80 icon-shape rounded-3">
-                                                                    <img src="assets/imgs/home-page-2/hero-1/icon-4.svg" alt="brand" />
-                                                                </Link>
-                                                                <span className="tool-tip">NodeJS</span>
-                                                            </li>
-                                                            <li className="carouselTicker__item mt-6">
-                                                                <Link to="#" className="brand-logo icon_80 icon-shape rounded-3">
-                                                                    <img src="assets/imgs/home-page-2/hero-1/icon-1.svg" alt="brand" />
-                                                                </Link>
-                                                                <span className="tool-tip">NextJS</span>
-                                                            </li>
-                                                            <li className="carouselTicker__item mt-6">
-                                                                <Link to="#" className="brand-logo icon_80 icon-shape rounded-3">
-                                                                    <img src="assets/imgs/home-page-2/hero-1/icon-2.svg" alt="brand" />
-                                                                </Link>
-                                                                <span className="tool-tip">Firebase</span>
-                                                            </li>
-                                                            <li className="carouselTicker__item mt-6">
-                                                                <Link to="#" className="brand-logo icon_80 icon-shape rounded-3">
-                                                                    <img src="assets/imgs/home-page-2/hero-1/icon-3.svg" alt="brand" />
-                                                                </Link>
-                                                                <span className="tool-tip">MongoDB</span>
-                                                            </li>
-                                                            <li className="carouselTicker__item mt-6">
-                                                                <Link to="#" className="brand-logo icon_80 icon-shape rounded-3">
-                                                                    <img src="assets/imgs/home-page-2/hero-1/icon-6.svg" alt="brand" />
-                                                                </Link>
-                                                                <span className="tool-tip">React</span>
-                                                            </li>
-                                                        </ul>
-                                                    </Marquee>
+                                                    <SkillTicker logos={skillLogosTop} direction="right" />
                                                 </div>
                                                 <div className="col-lg-8 col-md-7 col-10 mx-auto overflow-hidden">
                                                     {/* Carausel Scroll */}
-                                                    <Marquee className="carouselTicker carouselTicker-left position-relative z-1">
-                                                        <ul className="carouselTicker__list m-0 ">
-                                                            <li className="carouselTicker__item mt-6">
-                                                                <Link to="#" className="brand-logo icon_80 icon-shape rounded-3">
-                                                                    <img src="assets/imgs/home-page-2/hero-1/icon-7.svg" alt="brand" />
-                                                                </Link>
-                                                                <span className="tool-tip">VueJS</span>
-                                                            </li>
-                                                            <li className="carouselTicker__item mt-6">
-                                                                <Link to="#" className="brand-logo icon_80 icon-shape rounded-3">
-                                                                    <img src="assets/imgs/home-page-2/hero-1/icon-8.svg" alt="brand" />
-                                                                </Link>
-                                                                <span className="tool-tip">Angular</span>
-                                                            </li>
-                                                            <li className="carouselTicker__item mt-6">
-                                                                <Link to="#" className="brand-logo icon_80 icon-shape rounded-3">
-                                                                    <img src="assets/imgs/home-page-2/hero-1/icon-9.svg" alt="brand" />
-                                                                </Link>
-                                                                <span className="tool-tip">Laravel</span>
-                                                            </li>
-                                                            <li className="carouselTicker__item mt-6">
-                                                                <Link to="#" className="brand-logo icon_80 icon-shape rounded-3">
-                                                                    <img src="assets/imgs/home-page-2/hero-1/icon-5.svg" alt="brand" />
-                                                                </Link>
-                                                                <span className="tool-tip">Tailwind</span>
-                                                            </li>
-                                                        </ul>
-                                                    </Marquee>
+                                                    <SkillTicker logos={skillLogosBottom} direction="left" />
                                                 </div>
                                             </div>
                                         </div>
@@ -98,36 +78,14 @@ export default function Skills() {
                                                 <div className="col-md-10 mx-auto">
                                                     <div className="h-100 position-relative">
                                                         <ul className="ps-3 d-flex flex-column justify-content-between h-100 position-relative">
-                                                            <li className="mb-3">
-                                                                <div className="d-flex flex-column flex-md-row gap-2">
-                                                                    <p className="text-dark text-nowrap mb-0">Front-End:</p>
-                                                                    <span className="text-300">HTML, CSS, JavaScript, React, Angular</span>
-                                                                </div>
-                                                            </li>
-                                                            <li className="mb-3">
-                                                                <div className="d-flex flex-column flex-md-row gap-2">
-                                                                    <p className="text-dark text-nowrap mb-0">Back-End:</p>
-                                                                    <span className="text-300">Node.js, Express, Python, Django</span>
-                                                                </div>
-                                                            </li>
-                                                            <li className="mb-3">
-                                                                <div className="d-flex flex-column flex-md-row gap-2">
-                                                                    <p className="text-dark text-nowrap mb-0">Databases:</p>
-                                                                    <span className="text-300">MySQL, PostgreSQL, MongoDB</span>
-                                                                </div>
-                                                            </li>
-                                                            <li className="mb-3">
-                                                                <div className="d-flex flex-column flex-md-row gap-2">
-                                                                    <p className="text-dark text-nowrap mb-0">Tools &amp; Platforms:</p>
-                                                                    <span className="text-300">Git, Docker, AWS, Heroku</span>
-                                                                </div>
-                                                            </li>
-                                                            <li className="mb-3">
-                                                                <div className="d-flex flex-column flex-md-row gap-2">
-                                                                    <p className="text-dark text-nowrap mb-0">Others:</p>
-                                                                    <span className="text-300">RESTful APIs, GraphQL, Agile Methodologies</span>
-                                                                </div>
-                                                            </li>
+                                                            {skillGroups.map((group) => (
+                                                                <li key={group.label} className="skill-group mb-3">
+                                                                    <div className="d-flex flex-column flex-md-row gap-2">
+                                                                        <p className="text-dark text-nowrap mb-0">{group.label}</p>
+                                                                        <span className="text-300">{group.items}</span>
+                                                                    </div>
+                                                                </li>
+                                                            ))}
                                                         </ul>
                                                     </div>
                                                 </div>

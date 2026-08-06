@@ -39,7 +39,7 @@ export default function OffCanvas({ isOffCanvas, handleOffCanvas }) {
           </div>
           <div className='contact-list'>
             <p className='text-400 fs-5 mb-2'>Social</p>
-            <div className='d-md-flex d-none gap-3'>
+            <div className='d-flex gap-3'>
               {/* <a href="http://facebook.com" target="_blank" rel="noopener noreferrer">
                                     <i className="ri-facebook-circle-fill fs-18" />
                                 </a> */}
@@ -53,9 +53,14 @@ export default function OffCanvas({ isOffCanvas, handleOffCanvas }) {
               >
                 <i className='ri-linkedin-fill fs-18' />
               </a>
-              {/* <a href="http://github.com" target="_blank" rel="noopener noreferrer">
-                                    <i className="ri-github-fill fs-18" />
-                                </a> */}
+              <a
+                href='https://github.com/Muhammad-Khizar-Waqar'
+                target='_blank'
+                rel='noopener noreferrer'
+                aria-label='GitHub'
+              >
+                <i className='ri-github-fill fs-18' />
+              </a>
             </div>
           </div>
         </div>

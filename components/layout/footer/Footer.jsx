@@ -24,15 +24,21 @@ export default function Footer() {
                 <a href='https://www.linkedin.com/in/muhammad-khizar-waqar' target="_blank" rel="noopener noreferrer">
                   <i className='ri-linkedin-fill fs-18' />
                 </a>
-                {/* <a href="http://github.com" target="_blank" rel="noopener noreferrer">
-                                    <i className="ri-github-fill fs-18" />
-                                </a> */}
+                <a
+                  href='https://github.com/Muhammad-Khizar-Waqar'
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label='GitHub'
+                >
+                  <i className='ri-github-fill fs-18' />
+                </a>
               </div>
               <div className='navigation d-flex align-items-center justify-content-center flex-wrap gap-4 my-4'>
                 <a href='#about' className='fs-6'> About me </a>
                 <a href='#services' className='fs-6'> Services </a>
                 <a href='#portfolio' className='fs-6'> Portfolio </a>
-                <a href='#blog' className='fs-6'> Blog </a>
+                <a href='#projects' className='fs-6'> Projects </a>
+                <a href='#skills' className='fs-6'> Skills </a>
                 <a href='#contact' className='fs-6'> Contact </a>
               </div>
             </div>

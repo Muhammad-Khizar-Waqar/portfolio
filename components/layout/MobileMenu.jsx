@@ -36,34 +36,58 @@ export default function MobileMenu({ isMobileMenu, handleMobileMenu }) {
                 <nav>
                   <ul className='mobile-menu font-heading ps-0'>
                     <li className='nav-item'>
-                      <Link className='nav-link active' to='/'>
-                        Home
-                      </Link>
+                      <a
+                        className='nav-link active'
+                        href='#about'
+                        onClick={handleMobileMenu}
+                      >
+                        About me
+                      </a>
                     </li>
                     <li className='nav-item'>
-                      <Link className='nav-link' to='/services'>
+                      <a
+                        className='nav-link'
+                        href='#services'
+                        onClick={handleMobileMenu}
+                      >
                         Services
-                      </Link>
+                      </a>
                     </li>
                     <li className='nav-item'>
-                      <Link className='nav-link' to='/work'>
+                      <a
+                        className='nav-link'
+                        href='#portfolio'
+                        onClick={handleMobileMenu}
+                      >
                         Portfolio
-                      </Link>
+                      </a>
                     </li>
                     <li className='nav-item'>
-                      <Link className='nav-link' to='/pricing'>
-                        Pricing
-                      </Link>
+                      <a
+                        className='nav-link'
+                        href='#projects'
+                        onClick={handleMobileMenu}
+                      >
+                        Projects
+                      </a>
                     </li>
                     <li className='nav-item'>
-                      <Link className='nav-link' to='/blog-list'>
-                        Blog
-                      </Link>
+                      <a
+                        className='nav-link'
+                        href='#skills'
+                        onClick={handleMobileMenu}
+                      >
+                        Skills
+                      </a>
                     </li>
                     <li className='nav-item'>
-                      <Link className='nav-link' to='/#contact'>
+                      <a
+                        className='nav-link'
+                        href='#contact'
+                        onClick={handleMobileMenu}
+                      >
                         Contact
-                      </Link>
+                      </a>
                     </li>
                   </ul>
                 </nav>

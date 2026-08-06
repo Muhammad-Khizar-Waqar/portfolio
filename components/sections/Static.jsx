@@ -14,10 +14,10 @@ export default function Static() {
 										<div className="content mx-auto">
 											<i className="ri-shape-line text-primary-2" />
 											<h2 className="text-300 my-0 fs-50">
-												<CountUp className="odometer text-dark fw-medium" enableScrollSpy={true} end={5} />
+												<CountUp className="odometer text-dark fw-medium" enableScrollSpy={true} end={4} />
 												<span className="fs-50 text-300 mb-0">+</span>
 											</h2>
-											<p className="fs-6 mb-0 text-dark">Year Experience</p>
+											<p className="fs-6 mb-0 text-dark">Years Experience</p>
 										</div>
 									</div>
 								</div>
@@ -26,7 +26,7 @@ export default function Static() {
 										<div className="content mx-auto">
 											<i className="ri-computer-line text-primary-2" />
 											<h2 className="text-300 my-0 fs-50">
-												<CountUp className="odometer text-dark fw-medium" enableScrollSpy={true} end={70} />
+												<CountUp className="odometer text-dark fw-medium" enableScrollSpy={true} end={100} />
 												<span className="fs-50 text-300 mb-0">+</span>
 											</h2>
 											<p className="fs-6 mb-0 text-dark">Projects Completed</p>

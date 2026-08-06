@@ -10,7 +10,7 @@ export default function Hero() {
         e.preventDefault();
         console.log("Error: CV file not found. Please contact support.");
       }
-    } catch (error) {
+    } catch {
       e.preventDefault();
       console.log("Error accessing the CV file. Please try again later.");
     }
@@ -20,7 +20,7 @@ export default function Hero() {
     <>
       <section
         id="about"
-        className="section-hero-2 position-relative pt-130 pb-3"
+        className="section-hero-2 position-relative"
       >
         <div className="container hero-2">
           <div className="border border-1 rounded-3">
@@ -52,25 +52,33 @@ export default function Hero() {
                       &lt;/span&gt;
                     </div>
                     <h1 className="fs-50 my-3">
-                      Senior{" "}
+                      Full Stack{" "}
                       <span className="text-linear-4">
-                        {"{"}Full Stack{"}"}
+                        {"{"}AI{"}"}
                       </span>{" "}
                       Web Developer<span className="flicker">_</span>
                     </h1>
                     <p className="mb SIX text-secondary-2">
                       &lt;p&gt;
                       <span className="text-dark">
-                        With expertise in cutting-edge technologies such as
+                        I build and scale
                       </span>{" "}
-                      <span className="text-secondary-2">NodeJS</span>,{" "}
-                      <span className="text-secondary-2">React JS</span>,{" "}
-                      <span className="text-secondary-2">Next JS</span>,{" "}
-                      <span className="text-secondary-2">Vue JS</span>, and{" "}
-                      <span className="text-secondary-2">Mongoose DB</span>
+                      <span className="text-secondary-2">React</span>,{" "}
+                      <span className="text-secondary-2">Next.js</span> and{" "}
+                      <span className="text-secondary-2">Node.js</span>{" "}
                       <span className="text-dark">
-                        ... I deliver web solutions that are both innovative and
-                        robust.
+                        platforms — plus the
+                      </span>{" "}
+                      <span className="text-secondary-2">AI agents</span>{" "}
+                      <span className="text-dark">and</span>{" "}
+                      <span className="text-secondary-2">automations</span>{" "}
+                      <span className="text-dark">
+                        that run inside them. Chatbots that actually know your
+                        data, workflows that stop being manual, and
+                      </span>{" "}
+                      <span className="text-secondary-2">SaaS</span>{" "}
+                      <span className="text-dark">
+                        products built for real business results — not demos.
                       </span>
                       &lt;/p&gt;
                     </p>

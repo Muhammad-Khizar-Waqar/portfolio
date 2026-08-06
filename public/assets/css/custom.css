@@ -1,0 +1,275 @@
+/*
+  Section rhythm.
+
+  Every section shipped with its own ad-hoc spacing — hero 130/16, static 0/0,
+  the middle four 32/0, contact 110/60. These give all of them the same 2rem
+  on top and nothing at the bottom, so the gap between any two sections is
+  exactly one --section-space rather than two stacked paddings.
+
+  Change --section-space to retune the whole page from one place.
+*/
+:root {
+  --section-space: 2rem;
+  /* .navbar-home-2 is position:absolute (top 22px, height 82px), so it floats
+     over the hero. The hero needs that height on top of the shared spacing,
+     otherwise its content sits underneath the navbar. */
+  --navbar-clearance: 104px;
+}
+
+.section-hero-2,
+.section-static-1,
+.section-service-2,
+.section-experience,
+.section-projects-2,
+.section-skills-2,
+.section-contact-2 {
+  padding-top: var(--section-space) !important;
+  padding-bottom: 0 !important;
+}
+
+.section-hero-2 {
+  padding-top: calc(var(--navbar-clearance) + var(--section-space)) !important;
+}
+
+/*
+  Type scale.
+
+  main.css ships oversized headings (h1 49px … h6 20px, .fs-50 50px) as fixed
+  pixels with no media queries — too large on desktop and overflowing on
+  phones. This is a tighter scale that steps down at each breakpoint.
+*/
+
+h1 {
+  font-size: 40px;
+}
+h2 {
+  font-size: 34px;
+}
+h3 {
+  font-size: 28px;
+}
+h4 {
+  font-size: 23px;
+}
+h5 {
+  font-size: 19px;
+}
+h6 {
+  font-size: 17px;
+}
+.fs-50 {
+  font-size: 40px !important;
+}
+
+@media (max-width: 991.98px) {
+  h1 {
+    font-size: 34px;
+  }
+  h2 {
+    font-size: 29px;
+  }
+  h3 {
+    font-size: 25px;
+  }
+  h4 {
+    font-size: 21px;
+  }
+  h5 {
+    font-size: 18px;
+  }
+  .fs-50 {
+    font-size: 34px !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  h1 {
+    font-size: 29px;
+  }
+  h2 {
+    font-size: 26px;
+  }
+  h3 {
+    font-size: 23px;
+  }
+  h4 {
+    font-size: 20px;
+  }
+  h5 {
+    font-size: 17px;
+  }
+  h6 {
+    font-size: 16px;
+  }
+  .fs-50 {
+    font-size: 30px !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  h1 {
+    font-size: 26px;
+  }
+  h2 {
+    font-size: 23px;
+  }
+  h3 {
+    font-size: 21px;
+  }
+  h4 {
+    font-size: 19px;
+  }
+  .fs-50 {
+    font-size: 27px !important;
+  }
+}
+
+/*
+  Experience tabs.
+
+  These were <a> elements in the template and are now <button>s, so the
+  browser's default button styling has to be reset back to the original look.
+  main.css only styles :hover — it never gave the selected tab a state, and it
+  turns the background light green while leaving the text white, which is
+  unreadable. Both states get dark text here.
+*/
+.section-experience .technology {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background-color: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.section-experience .technology.active {
+  background-color: #c0dcbc !important;
+}
+
+.section-experience .technology:hover h5,
+.section-experience .technology:hover span,
+.section-experience .technology:hover i,
+.section-experience .technology.active h5,
+.section-experience .technology.active span,
+.section-experience .technology.active i {
+  color: #1f1f24 !important;
+}
+
+.section-experience .technology:focus-visible {
+  outline: 2px solid #62a92b;
+  outline-offset: 2px;
+}
+
+/*
+  Theme switcher.
+
+  It carries .pe-10 (6rem !important) from main.css, which beats the Bootstrap
+  pe-0/pe-lg-0 utilities because main.css is imported last. On a 320px screen
+  that 96px of padding pushed the navbar past the viewport.
+*/
+@media (max-width: 767.98px) {
+  .navbar .dark-light-switcher {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+}
+
+@media (max-width: 379.98px) {
+  .navbar .dark-light-switcher {
+    width: 56px !important;
+  }
+}
+
+/*
+  Back-to-top button.
+
+  Now that the background is the bright green --tc-theme-dark-primary-2 instead
+  of the old purple, the white arrow has almost no contrast — it needs the dark
+  ink the rest of the site uses on green.
+*/
+/* Literal ink, not --tc-neutral-0: that variable flips to white in dark mode,
+   which is exactly the case this rule exists to fix. */
+.btn-scroll-top:after {
+  color: #1f1f24 !important;
+}
+
+@media (max-width: 575.98px) {
+  .btn-scroll-top {
+    right: 1rem;
+    bottom: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .btn-scroll-top:after {
+    line-height: 2.5rem;
+    font-size: 1.25rem;
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+}
+
+/*
+  Off-canvas panel.
+
+  main.css pins it to a hard 340px, which is wider than a 320px phone, so the
+  panel and its contents ran off-screen once opened.
+*/
+.offCanvas__info {
+  width: min(340px, 85vw);
+  padding: 30px 24px;
+}
+
+/* Contact form states. */
+.section-contact-2 .field-invalid {
+  border-color: #e5533d !important;
+}
+
+.section-contact-2 .field-error {
+  color: #e5533d;
+  font-size: 14px;
+}
+
+.section-contact-2 .form-status {
+  font-size: 15px;
+}
+
+.section-contact-2 .form-status-ok {
+  color: #62a92b;
+}
+
+.section-contact-2 .form-status-fail {
+  color: #e5533d;
+}
+
+.section-contact-2 .form-status a {
+  color: inherit;
+  text-decoration: underline;
+  overflow-wrap: anywhere;
+}
+
+.section-contact-2 textarea.form-control {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Long URLs, emails and comma-separated tech lists must not force a
+   horizontal scrollbar on small screens. */
+.break-all,
+.section-projects-2 .project-meta p,
+.section-skills-2 .skill-group span {
+  overflow-wrap: anywhere;
+}
+
+/* Project meta rows stack instead of squashing on phones. */
+@media (max-width: 575.98px) {
+  .section-projects-2 .project-meta {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 2px;
+  }
+  .section-projects-2 .project-meta p {
+    text-align: left !important;
+  }
+}

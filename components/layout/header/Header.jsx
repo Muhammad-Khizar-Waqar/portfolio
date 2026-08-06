@@ -67,11 +67,6 @@ export default function Header({
                         </a>
                       </li>
                       <li className='nav-item'>
-                        <a className='nav-link' href='#blog'>
-                          Blog
-                        </a>
-                      </li>
-                      <li className='nav-item'>
                         <a className='nav-link' href='#contact'>
                           Contact
                         </a>
@@ -88,9 +83,14 @@ export default function Header({
                     >
                       <i className='ri-linkedin-fill fs-18' />
                     </a>
-                    {/* <a href='http://github.com' target='_blank' rel='noopener noreferrer'>
+                    <a
+                      href='https://github.com/Muhammad-Khizar-Waqar'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      aria-label='GitHub'
+                    >
                       <i className='ri-github-fill fs-18' />
-                    </a> */}
+                    </a>
                   </div>
                   <div
                     className='burger-icon burger-icon-white border rounded-3'
